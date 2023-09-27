@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#left_all{
+    display: flex;
+}
+
+#between{
+    margin-left: 10px;
+    display: grid;
+
+}
+
+.text-with-image {
+  display: flex;
+  align-items: center;
+}
+
+#right img {
+  width: 130px; /* Thay đổi kích thước ảnh theo nhu cầu */
+  height: auto; /* Đảm bảo tỷ lệ khung hình không bị méo */
+}
+
+.bordered-element {
+        border: 1px solid black;
+        padding: 0px;
+        margin: 0;
+        text-align: center;
+    }
+
+    .hidden{
+        display: none;
+    }
+
+    #lelf img {
+        width: 149px;
+    }
+
+    #left #met{
+        height: 30px;
+        margin: 0;
+    }
+    #left #met p{
+        text-align: center;
+    }
+
+    #add_more_rider,#edit_rider{
+        margin-top: 30px;
+    }
+    
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <!-- <h1>hello</h1> -->
+<div id="header">
+    <div id="left_all">
+        <div id="lelf">
+            <div class="bordered-element">Circuit Ricardo Tormo</div>
+<img src="./img/anh1.png" alt="" class="bordered-element">
+<p class="bordered-element" id="met">4005 m.</p>
+        </div>
+        <div id="between">
+            <div class="text-with-image">
+                <div>Results and timing service provided by</div>
+                <img src="./img/anh2.png" alt="">
+            </div>
+            <div><h3>GRAN PREMIO MOTUL DE LA COMUNITAT VALENCIANA</h3></div>
+            <div>World Championship Classification</div>
+        </div>
+    </div>
+    <div id="right"><img src="./img/anh3.png" alt=""></div>
+</div>
+<table id="table">
+    <thead   style="border: #555 1px solid;">
+        <tr >
+            <th>Rank</th>
+            <th>Rider</th>
+            <th>Country</th>
+            <th>Points</th>
+            <th>Leader</th>
+            <th>Previous</th>
+            <th>QAT</th>
+            <th>INA</th>
+            <th>ARG</th>
+            <th>AME</th>
+            <th>POR</th>
+            <th>SPA</th>
+            <th>FRA</th>
+            <th>ITA</th>
+            <th>CAT</th>
+            <th>GER</th>
+            <th>NED</th>
+            <th>GBR</th>
+            <th>AUT</th>
+            <th>RSM</th>
+            <th>ARA</th>
+            <th>JPN</th>
+            <th>THA</th>
+            <th>AUS</th>
+            <th>MAL</th>
+            <th>VAL</th>
+        </tr>
+    </thead>
+    <tbody id="table-body">
+    </tbody>
+</table>
+
+<input type="button" value="add more rider" id="add_more_rider">
+<input type="button" value="edit rider" id="edit_rider">
+
+
+<!-- <div class="form-group">
+    <label for="E-mail">Email</label>
+    <input type="email" id="email1" name="email" required placeholder="abc@gmail.com">
+  </div> -->
+<!-- <input type="button" value="check 3 lastest query" id="check_3_lastest_time">
+<div id="time_show"></div> -->
+
+
+<script src="./app2.js"></script>
+</body>
+</html>
