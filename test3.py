@@ -96,3 +96,10 @@ text11 = "4 0 9 6 6 2 6 4 9 - 16 20 3 16 3 9 9 0 0 -"
 # print(len(arr))
 
 
+
+# test4 = "QAT, INA, ARG, AME, POR, SPA ,FRA ,ITA ,CAT, GER, NED, GBR, AUT, RSM, ARA, JPN ,THA ,AUS, MAL, VAL"
+# # # test4 = "rider_name ,country ,QAT, INA, ARG, AME, POR, SPA ,FRA ,ITA ,CAT, GER, NED, GBR, AUT, RSM, ARA, JPN ,THA ,AUS, MAL, VAL"
+# arr_test4 = test4.split(",")
+# print(arr_test4)
+# for i in arr_test4:
+#     print(f"<option value='{i}'>{i}</option>")

@@ -41,6 +41,18 @@ data = [
     ['4', '0', '9', '6', '6', '2', '6', '4', '9', '-', '16', '20', '3', '16', '3', '9', '9', '0', '0', '-']
 
 ]
+# for i in range(len(a)):
+#     b = []
+#     for j in data:
+#         value = j[i]
+#         b.append(value)  
+#     print(f"{a[i]}s = {b}")
+
+# arr_test = []
+# for i in data:
+#     value = i[0]
+#     arr_test.append(value)
+# print(arr_test)
 
 # print(data[1][2])
 # for i in range(11):

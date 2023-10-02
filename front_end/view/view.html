@@ -3,57 +3,57 @@
 <head>
     <style>
         #header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        }
 
-#left_all{
-    display: flex;
-}
+        #left_all{
+            display: flex;
+        }
 
-#between{
-    margin-left: 10px;
-    display: grid;
+        #between{
+            margin-left: 10px;
+            display: grid;
 
-}
+        }
 
-.text-with-image {
-  display: flex;
-  align-items: center;
-}
+        .text-with-image {
+        display: flex;
+        align-items: center;
+        }
 
-#right img {
-  width: 130px; /* Thay đổi kích thước ảnh theo nhu cầu */
-  height: auto; /* Đảm bảo tỷ lệ khung hình không bị méo */
-}
+        #right img {
+        width: 130px; /* Thay đổi kích thước ảnh theo nhu cầu */
+        height: auto; /* Đảm bảo tỷ lệ khung hình không bị méo */
+        }
 
-.bordered-element {
-        border: 1px solid black;
-        padding: 0px;
-        margin: 0;
-        text-align: center;
-    }
+        .bordered-element {
+                border: 1px solid black;
+                padding: 0px;
+                margin: 0;
+                text-align: center;
+            }
 
-    .hidden{
-        display: none;
-    }
+            .hidden{
+                display: none;
+            }
 
-    #lelf img {
-        width: 149px;
-    }
+            #lelf img {
+                width: 149px;
+            }
 
-    #left #met{
-        height: 30px;
-        margin: 0;
-    }
-    #left #met p{
-        text-align: center;
-    }
+            #left #met{
+                height: 30px;
+                margin: 0;
+            }
+            #left #met p{
+                text-align: center;
+            }
 
-    #add_more_rider,#edit_rider{
-        margin-top: 30px;
-    }
+            #add_more_rider,#edit_rider{
+                margin-top: 30px;
+            }
     
 
         table {
@@ -78,7 +78,7 @@
     <div id="left_all">
         <div id="lelf">
             <div class="bordered-element">Circuit Ricardo Tormo</div>
-<img src="./img/anh1.png" alt="" class="bordered-element">
+<img src="../img/anh1.png" alt="" class="bordered-element">
 <p class="bordered-element" id="met">4005 m.</p>
         </div>
         <div id="between">
@@ -90,7 +90,7 @@
             <div>World Championship Classification</div>
         </div>
     </div>
-    <div id="right"><img src="./img/anh3.png" alt=""></div>
+    <div id="right"><img src="../img/anh3.png" alt=""></div>
 </div>
 <table id="table">
     <thead   style="border: #555 1px solid;">
@@ -124,26 +124,16 @@
         </tr>
     </thead>
     <tbody id="table-body2">
-        <!-- <tr>
-            <td>abc</td>
-            <td>11111111111111</td>
-            <td>222</td>
-            <td>333</td>
-        </tr> -->
+        
     </tbody>
 </table>
 
+<!-- <input type="button" value="admin" id="is_admin"> -->
 
 
 
-<!-- <div class="form-group">
-    <label for="E-mail">Email</label>
-    <input type="email" id="email1" name="email" required placeholder="abc@gmail.com">
-  </div> -->
-<!-- <input type="button" value="check 3 lastest query" id="check_3_lastest_time">
-<div id="time_show"></div> -->
 
 
-<script src="./app3.js"></script>
+<script src="../logic/view.js"></script>
 </body>
 </html>

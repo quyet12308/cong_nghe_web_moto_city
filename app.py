@@ -5,13 +5,14 @@ import sqlite3
 import uvicorn
 from data_processing import data_processing,data_processing2, get_Leader_arr, get_Previous_arr, get_poit_arr
 from access_history import save_data_for_history_in_table,query_database_for_history_3_time_lastest
-
+from database3 import query_database_for_admin_by_name
 
 import datetime
 import json
 import pytz
 
 from database2 import get_sorted_data
+from data_processing2 import data_processing3,get_finall_data
 
 
 def gettime2():
@@ -50,12 +51,42 @@ async def get_data_for_table_html():
     save_data_for_history_in_table(time=time) # save history
     return data 
 
+@app.get("/api/get_data2")
+async def get_data_for_table_html2():
+    
+    time = gettime2() # get time for history
+    data = get_finall_data()
+    save_data_for_history_in_table(time=time) # save history
+    return data 
+
 # Testing not completed with time history
 @app.get("/api/get_lastest_time")
 async def get_3_lastest_time():
     data = query_database_for_history_3_time_lastest()
     data_json = json.dumps(data)
     return data_json
+
+@app.post("/api/add_rider")
+async def add_rider(request_data: dict):
+    if request_data():
+        pass
+
+# @app.post("/api/is_admin")
+# async def is_admin(request_data: dict):
+#     if request_data:
+#         data = query_database_for_admin_by_name()
+#         id_ , name_ , pass_ , time = data
+#         if request_data["pass"] == :
+#             return {"response":{
+#                 "status":True
+#             }}
+#         else:
+#             return {"response":{
+#                 "status":False
+#             }}
+
+
+
 
 
 if __name__ == "__main__":

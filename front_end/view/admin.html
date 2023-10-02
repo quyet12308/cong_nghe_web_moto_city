@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+</head>
+<body>
+    <form id="vong_dua_form">
+        <label for="vong_dua">chọn vòng đua:</label>
+        <select name="vong_dua" id="vong_dua">
+            <option value=''>Null</option>
+            <option value='QAT'>QAT</option>
+            <option value=' INA'> INA</option>
+            <option value=' ARG'> ARG</option>
+            <option value=' AME'> AME</option>
+            <option value=' POR'> POR</option>
+            <option value=' SPA '> SPA </option>
+            <option value='FRA '>FRA </option>
+            <option value='ITA '>ITA </option>
+            <option value='CAT'>CAT</option>
+            <option value=' GER'> GER</option>
+            <option value=' NED'> NED</option>
+            <option value=' GBR'> GBR</option>
+            <option value=' AUT'> AUT</option>
+            <option value=' RSM'> RSM</option>
+            <option value=' ARA'> ARA</option>
+            <option value=' JPN '> JPN </option>
+            <option value='THA '>THA </option>
+            <option value='AUS'>AUS</option>
+            <option value=' MAL'> MAL</option>
+            <option value=' VAL'> VAL</option>
+          
+        </select>
+        <br><br>
+        <input type="submit" value="Submit">
+      </form>
+      <table>
+        <tr>
+          <th>Tên</th>
+          <th>Tuổi</th>
+          <th>Email</th>
+        </tr>
+        <tr>
+          <td><input type="text" name="name1"></td>
+          <td><input type="number" name="age1"></td>
+          <td><input type="email" name="email1"></td>
+        </tr>
+        
+        <!-- Thêm các hàng khác tương tự -->
+      </table>
+      <script>
+        let test = document.querySelector("#vong_dua_form").addEventListener("submit",()=>{
+            let test1 = document.querySelector("#vong_dua").value 
+            alert(`bạn đã chọn ${test1}`)
+
+        })
+        
+      </script>
+</body>
+</html>
