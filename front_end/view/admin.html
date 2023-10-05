@@ -4,58 +4,135 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin</title>
+    <script src="../logic/admin.js"></script>
 </head>
+<style>
+  #header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#left_all{
+    display: flex;
+}
+
+#between{
+    margin-left: 10px;
+    display: grid;
+
+}
+
+.text-with-image {
+  display: flex;
+  align-items: center;
+}
+
+#right img {
+  width: 130px; /* Thay đổi kích thước ảnh theo nhu cầu */
+  height: auto; /* Đảm bảo tỷ lệ khung hình không bị méo */
+}
+
+.bordered-element {
+        border: 1px solid black;
+        padding: 0px;
+        margin: 0;
+        text-align: center;
+    }
+
+    .hidden{
+        display: none;
+    }
+
+    #lelf img {
+        width: 149px;
+    }
+
+    #left #met{
+        height: 30px;
+        margin: 0;
+    }
+    #left #met p{
+        text-align: center;
+    }
+    #content_header{
+      align-items: center;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+    }
+    .center{
+      text-align: center;
+    }
+    #btn{
+      margin-top: 20px;
+    }
+
+</style>
 <body>
-    <form id="vong_dua_form">
-        <label for="vong_dua">chọn vòng đua:</label>
-        <select name="vong_dua" id="vong_dua">
-            <option value=''>Null</option>
-            <option value='QAT'>QAT</option>
-            <option value=' INA'> INA</option>
-            <option value=' ARG'> ARG</option>
-            <option value=' AME'> AME</option>
-            <option value=' POR'> POR</option>
-            <option value=' SPA '> SPA </option>
-            <option value='FRA '>FRA </option>
-            <option value='ITA '>ITA </option>
-            <option value='CAT'>CAT</option>
-            <option value=' GER'> GER</option>
-            <option value=' NED'> NED</option>
-            <option value=' GBR'> GBR</option>
-            <option value=' AUT'> AUT</option>
-            <option value=' RSM'> RSM</option>
-            <option value=' ARA'> ARA</option>
-            <option value=' JPN '> JPN </option>
-            <option value='THA '>THA </option>
-            <option value='AUS'>AUS</option>
-            <option value=' MAL'> MAL</option>
-            <option value=' VAL'> VAL</option>
-          
-        </select>
-        <br><br>
-        <input type="submit" value="Submit">
-      </form>
+        <div id="header">
+          <div id="left_all">
+              <div id="lelf">
+                  <div class="bordered-element">Circuit Ricardo Tormo</div>
+                  <img src="../img/anh1.png" alt="" class="bordered-element">
+                  <p class="bordered-element" id="met">4005 m.</p>
+              </div>
+              <div id="between">
+                  <div class="text-with-image">
+                      <div>Results and timing service provided by</div>
+                      <img src="../img/anh2.png" alt="">
+                  </div>
+                  <div><h3>GRAN PREMIO MOTUL DE LA COMUNITAT VALENCIANA</h3></div>
+                  <div>World Championship Classification</div>
+              </div>
+          </div>
+          <div id="right"><img src="../img/anh3.png" alt=""></div>
+      </div>
+      <br>
+      <div id="content_header">
+        <h1>Admin page  </h1>
+        <h1>|</h1>
+        <div id="sub_content_header"></div>
+      </div>
       <table>
-        <tr>
-          <th>Tên</th>
-          <th>Tuổi</th>
-          <th>Email</th>
-        </tr>
-        <tr>
-          <td><input type="text" name="name1"></td>
-          <td><input type="number" name="age1"></td>
-          <td><input type="email" name="email1"></td>
-        </tr>
+        <thead   style="border: #555 1px solid;">
+          <tr>
+            <th>Rider name</th>
+            <th>Country</th>
+            <th>Poit</th>
+            <!-- <th>Email</th> -->
+          </tr>
+        </thead>
+        
+        <tbody id="table_body_admin_page">
+          <!-- <tr>
+            <td class="center">abc</td>
+            <td class="center">Country</td>
+            <td><input type="text" name="point1"></td>
+          </tr>
+          <tr>
+            <td>111</td>
+            <td><input type="text" name="point2"></td>
+          </tr> -->
+          <tr><td class="center">BAGNAIA Francesco</td><td class="center">ITA</td><td><input type="number" name="point0"></td></tr>
+          <tr><td class="center">QUARTARARO Fabio</td><td class="center">FRA</td><td><input type="number" name="point1"></td></tr>
+          <tr><td class="center">BASTIANINI Enea</td><td class="center">ITA</td><td><input type="number" name="point2"></td></tr>
+          <tr><td class="center">ESPARGARO Aleix</td><td class="center">SPA</td><td><input type="number" name="point3"></td></tr>
+          <tr><td class="center">MILLER Jack</td><td class="center">AUS</td><td><input type="number" name="point4"></td></tr>
+          <tr><td class="center">BINDER Brad</td><td class="center">RSA</td><td><input type="number" name="point5"></td></tr>
+          <tr><td class="center">RINS Alex</td><td class="center">SPA</td><td><input type="number" name="point6"></td></tr>
+          <tr><td class="center">ZARCO Johann</td><td class="center">FRA</td><td><input type="number" name="point7"></td></tr>
+          <tr><td class="center">MARTIN Jorge</td><td class="center">SPA</td><td><input type="number" name="point8"></td></tr>
+          <tr><td class="center">OLIVEIRA Miguel</td><td class="center">POR</td><td><input type="number" name="point9"></td></tr>
+          <tr><td class="center">VINALES Maverick</td><td class="center">SPA</td><td><input type="number" name="point10"></td></tr>
+        </tbody>
         
         <!-- Thêm các hàng khác tương tự -->
       </table>
-      <script>
-        let test = document.querySelector("#vong_dua_form").addEventListener("submit",()=>{
-            let test1 = document.querySelector("#vong_dua").value 
-            alert(`bạn đã chọn ${test1}`)
 
-        })
-        
-      </script>
+      <button id="btn">Save</button>
+      <p>Note: những rider nào không tham gia vòng đấu này thì có thể để trống , để trống khác so với điền 0</p>
+
+
 </body>
 </html>

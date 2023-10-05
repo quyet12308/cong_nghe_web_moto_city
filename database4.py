@@ -81,6 +81,52 @@ def update_column_values(column_name, values):
     conn.commit()
     conn.close()
 
+def get_empty_columns(table_name):
+    conn = sqlite3.connect('database/rider.db')  # Thay thế bằng đường dẫn tới cơ sở dữ liệu SQLite của bạn
+    cursor = conn.cursor()
+
+    # Lấy tên cột trong bảng
+    cursor.execute(f"PRAGMA table_info({table_name})")
+    columns = cursor.fetchall()
+    column_names = [column[1] for column in columns]
+
+    # Kiểm tra các cột không có giá trị
+    empty_columns = []
+    for column in column_names:
+        cursor.execute(f"SELECT COUNT(*) FROM {table_name} WHERE {column} IS NULL")
+        count = cursor.fetchone()[0]
+        if count == 0:
+            empty_columns.append(column)
+
+    conn.close()
+    return empty_columns
+
+def get_empty_column2(table_name):
+    conn = sqlite3.connect('database/rider.db')  # Thay đổi đường dẫn tới cơ sở dữ liệu của bạn
+    cursor = conn.cursor()
+
+    # Lấy danh sách tên cột trong bảng
+    cursor.execute(f"PRAGMA table_info({table_name})")
+    columns = [column[1] for column in cursor.fetchall()]
+
+    # Kiểm tra từng cột trong danh sách
+    for column in columns:
+        cursor.execute(f"SELECT COUNT(*) FROM {table_name} WHERE {column} IS NOT NULL")
+        result = cursor.fetchone()[0]
+        if result == 0:
+            # Trả về tên cột chưa có giá trị
+            return column
+
+    # Đóng kết nối và cursor
+    cursor.close()
+    conn.close()
+
+    # Trường hợp không tìm thấy cột nào chưa có giá trị
+    return None
+
+# d = get_empty_columns("rider5")
+# e = get_empty_column2("rider5")
+# print(e)
 
 vong_dua = ['QAT', 'INA', 'ARG', 'AME', 'POR', 'SPA', 'FRA', 'ITA', 'CAT', 'GER', 'NED', 'GBR', 'AUT', 'RSM', 'ARA', 'JPN', 'THA', 'AUS', 'MAL', 'VAL']
 QATs = ['-', '7', '25', '13', '-', '20', '9', '8', '-', '-', '4']
@@ -103,8 +149,8 @@ THAs = ['16', '0', '10', '5', '20', '6', '4', '13', '7', '25', '9']
 AUSs = ['16', '-', '11', '7', '-', '6', '25', '8', '9', '4', '0']
 MALs = ['25', '16', '20', '6', '10', '8', '11', '7', '-', '3', '0']
 VALs = ['7', '13', '8', '-', '-', '20', '25', '-', '16', '11', '-']
-# for i in AMEs:
-#     update_column_values(column_name="AME",values=AMEs)
+# for i in SPAs:
+#     update_column_values(column_name="SPA",values=SPAs)
 
 name = [
     "BAGNAIA Francesco",
@@ -120,9 +166,14 @@ name = [
     "VINALES Maverick"
 ]
 
+
+
 countrys = [
 "ITA","FRA","ITA","SPA","AUS","RSA","SPA","FRA","SPA","POR","SPA"
 ]
+
+# for i in range(11):
+#     print(f'<tr><td class="center">{name[i]}</td><td class="center">{countrys[i]}</td><td><input type="number" name="point{i}"></td></tr>')
 
 
 # for i in range(11):

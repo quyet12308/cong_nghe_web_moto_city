@@ -12,7 +12,9 @@ import json
 import pytz
 
 from database2 import get_sorted_data
+from database4 import get_empty_column2,update_column_values
 from data_processing2 import data_processing3,get_finall_data
+from test4 import replace_empty_with_dash
 
 
 def gettime2():
@@ -68,8 +70,33 @@ async def get_3_lastest_time():
 
 @app.post("/api/add_rider")
 async def add_rider(request_data: dict):
-    if request_data():
+    if request_data:
         pass
+
+@app.get("/api/get_the_name_of_the_race")
+async def get_the_name_of_the_race():
+    empty_column = get_empty_column2("rider5")
+    return {"response":empty_column}
+
+
+@app.post("/api/update_the_point_of_the_race")
+async def update_the_point_of_the_race(request_data: dict):
+    if request_data:
+        arr_data = request_data["arr_data"]
+        empty_column = request_data["empty_column"]
+        # print(arr_data)
+        # print(empty_column)
+        empty_column_ = get_empty_column2("rider5")
+        if empty_column == empty_column_:
+            new_arr = replace_empty_with_dash(arr=arr_data)
+            update_column_values(column_name=empty_column,values=new_arr)
+            
+            return {"response":"updated successfully"}
+        else:
+            return {"response":"update failed"}
+            
+
+
 
 # @app.post("/api/is_admin")
 # async def is_admin(request_data: dict):
