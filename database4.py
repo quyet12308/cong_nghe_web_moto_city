@@ -180,6 +180,6 @@ countrys = [
 #     # print(i)
 #     save_data_for_rider_in_table5(rider_name=name[i],country=countrys[i])
 
-# for i in range(15):
-#     data = query_database_for_rider_by_id5(i)
-#     print(data)
+for i in range(15):
+    data = query_database_for_rider_by_id5(i)
+    print(data)

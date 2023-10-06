@@ -16,7 +16,7 @@ from database4 import get_empty_column2,update_column_values
 from data_processing2 import data_processing3,get_finall_data
 from test4 import replace_empty_with_dash
 
-
+# lấy time
 def gettime2():
     utc_time = datetime.datetime.now(pytz.utc)
     local_time = utc_time.astimezone(pytz.timezone('Asia/Ho_Chi_Minh'))
@@ -26,7 +26,7 @@ def gettime2():
 
 app = FastAPI()
 
-# cors
+# cors để ko chặn trang web
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],  # Sửa đổi danh sách này để chỉ định các nguồn mà bạn muốn chấp nhận yêu cầu từ
@@ -38,7 +38,7 @@ app.add_middleware(
 
 
 
-#get database
+#get database 
 @app.get("/api/get_data")
 async def get_data_for_table_html():
     data_arr = get_sorted_data()# get pre-processing data
@@ -62,23 +62,27 @@ async def get_data_for_table_html2():
     return data 
 
 # Testing not completed with time history
+# phần test đang phát triển thêm để làm thêm phần lịch sử 
 @app.get("/api/get_lastest_time")
 async def get_3_lastest_time():
     data = query_database_for_history_3_time_lastest()
     data_json = json.dumps(data)
     return data_json
 
+# hàm test
 @app.post("/api/add_rider")
 async def add_rider(request_data: dict):
     if request_data:
         pass
 
+# phần lấy tên vòng đua cho phần admin page
 @app.get("/api/get_the_name_of_the_race")
 async def get_the_name_of_the_race():
     empty_column = get_empty_column2("rider5")
     return {"response":empty_column}
 
 
+# cập nhật điểm vào database
 @app.post("/api/update_the_point_of_the_race")
 async def update_the_point_of_the_race(request_data: dict):
     if request_data:
