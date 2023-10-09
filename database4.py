@@ -149,8 +149,8 @@ THAs = ['16', '0', '10', '5', '20', '6', '4', '13', '7', '25', '9']
 AUSs = ['16', '-', '11', '7', '-', '6', '25', '8', '9', '4', '0']
 MALs = ['25', '16', '20', '6', '10', '8', '11', '7', '-', '3', '0']
 VALs = ['7', '13', '8', '-', '-', '20', '25', '-', '16', '11', '-']
-# for i in SPAs:
-#     update_column_values(column_name="SPA",values=SPAs)
+# for i in QATs:
+#     update_column_values(column_name="QAT",values=QATs)
 
 name = [
     "BAGNAIA Francesco",
@@ -180,6 +180,6 @@ countrys = [
 #     # print(i)
 #     save_data_for_rider_in_table5(rider_name=name[i],country=countrys[i])
 
-for i in range(15):
-    data = query_database_for_rider_by_id5(i)
-    print(data)
+# for i in range(15):
+#     data = query_database_for_rider_by_id5(i)
+#     print(data)
